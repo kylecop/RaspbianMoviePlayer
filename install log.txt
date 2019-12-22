@@ -1,0 +1,21 @@
+
+xbian@xbian ~ $ sudo apt-get update
+
+xbian@xbian ~ $ sudo apt-get install gcc
+
+xbian@xbian ~ $ sudo apt-get install python-dev -f
+
+xbian@xbian ~ $ wget https://pypi.python.org/packages/e2/58/6e1b775606da6439fa3fd1550e7f714ac62aa75e162eed29dbec684ecb3e/RPi.GPIO-0.6.3.tar.gz
+
+
+xbian@xbian ~ $ tar -xf RPi.GPIO-0.6.3.tar.gz
+
+
+xbian@xbian ~ $ cd RPi.GPIO-0.6.3
+
+
+xbian@xbian ~/RPi.GPIO-0.6.3 $ sudo python setup.py install
+
+xbian@xbian ~/RPi.GPIO-0.6.3 $ sudo reboot
+
+

@@ -1,0 +1,50 @@
+import os
+import sys
+
+
+
+
+last_movie_saved = open('/home/xbian/Movies/last_played.txt').readline()
+my_list = list()
+for movie_file in [doc for doc in os.listdir("/home/xbian/Movies/")]:
+       if (movie_file.endswith(".mkv")) or (movie_file.endswith(".avi")) or (movie_file.endswith(".mp4")):
+                my_list.append(movie_file)
+
+print my_list
+
+for movie_array_name in my_list:
+        if (movie_array_name == last_movie_saved):
+                movie_index = my_list.index(movie_array_name)
+		last_movie = my_list[movie_index]
+
+		print "last movie = " + last_movie
+
+		print movie_index
+		print len(my_list)
+		if (movie_index == (len(my_list) - 1)):
+			next_movie = my_list[0]
+		else:
+			next_movie = my_list[movie_index + 1]
+		print "current movie = " + next_movie
+		
+
+
+thefile = open('/home/xbian/Movies/last_played.txt', 'w')
+thefile.write(next_movie)
+
+import xbmc
+file = '/home/xbian/Movies/' + next_movie
+print file
+# tell xbmc to play our file we specified in the above variable
+xbmc.Player().play(file)
+
+
+
+del last_movie_saved
+del my_list
+del movie_file
+del movie_array_name
+del movie_index
+del last_movie
+del next_movie
+del thefile
